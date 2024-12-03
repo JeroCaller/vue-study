@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CDN 방식 사용하여 Vue 사용하기-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script type="module">
+        import Counter from './counter.js';
+        const { createApp } = Vue;
+
+        createApp(Counter).mount("#app");
+    </script>
+</head>
+<body>
+    
+    <div id="app">
+        <p>{{ count }}</p>
+        <button v-on:click="increase">숫자 증가시키기</button> | 
+        <button @click="decrease">숫자 감소시키기</button> | 
+    </div>
+
+</body>
+</html>

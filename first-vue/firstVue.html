@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CDN 방식 사용하여 Vue 사용하기-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    
+    <div id="app">
+        <p>{{count}}</p>
+    </div>
+
+    <!-- 
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    count: 0,
+                };
+            },
+        }).mount('#app');
+    </script>
+     -->
+    <script type="module">
+        import MyFirstComponent from './messageShow.js';
+        const { createApp } = Vue;
+
+        createApp(MyFirstComponent)  // 앱 인스턴스 생성. 인자로 컴포넌트를 대입.
+        .mount('#app'); // 
+    </script>
+</body>
+</html>
